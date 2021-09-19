@@ -14,9 +14,8 @@ public class GithubSelenideTest extends TestBase {
     @Test
     public void githubTest() {
         open("https://github.com");
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
-        $(".header-search-input").submit();
+        $(".header-search-input").setValue("eroshenkoam/allure-example").submit();
+
 
         $(linkText("eroshenkoam/allure-example")).click();
         $(partialLinkText("Issues")).click();

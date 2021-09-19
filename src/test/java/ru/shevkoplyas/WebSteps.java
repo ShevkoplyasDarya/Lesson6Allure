@@ -19,14 +19,12 @@ public class WebSteps {
 
     @Step("Ищем репозиторий {repository}")
     public void searchForRepository(String repository) {
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys(repository);
-        $(".header-search-input").submit();
+        $(".header-search-input").setValue(repository).submit();
     }
 
-    @Step("Переходим в репозиторий {repo}")
-    public void goToRepository(String repo) {
-        $(linkText(repo)).click();
+    @Step("Переходим в репозиторий {repository}")
+    public void goToRepository(String repository) {
+        $(linkText(repository)).click();
     }
 
     @Step("Открываем раздел Issues ")
